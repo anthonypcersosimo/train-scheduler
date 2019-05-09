@@ -6,6 +6,10 @@
     font-weight: bold;
 }
 
+.jumbotron {
+    background-color: #7f462d;
+}
+
 .card {
     padding: 5px;
     border-width: 1px;
