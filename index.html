@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <title>Data Management Tool!</title>
+    <title>Train Scheduler</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 <body>
 <div class="container">
@@ -42,22 +44,22 @@
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Train Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Metro North Railway">
+                    <input type="text" class="form-control" id="trainNameInput" placeholder="Ex. Metro North Railway">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Destination</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. San Francisco">
+                    <input type="text" class="form-control" id="destinationInput" placeholder="Ex. San Francisco">
                 </div>
                 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">First Train Time</label>
-                    <input type="time" class="form-control" id="exampleFormControlInput1">
+                    <input type="time" class="form-control" id="trainTimeInput">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Frequency (min)</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ex. 15 min...">
+                    <input type="number" class="form-control" id="frequencyInput" placeholder="Ex. 15 min...">
                 </div>
-                <input class="btn btn-primary" type="submit" value="Submit">
+                <input class="btn btn-primary" type="submit" value="Submit" id="submitButton">
             </form>
         </div>   
     </div>
