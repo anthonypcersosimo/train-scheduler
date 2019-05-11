@@ -14,15 +14,11 @@ firebase.initializeApp(config);
 
 // Create a variable to reference the database
 var database = firebase.database();
-database.ref().set({
-    trainName: "",
-    trainDest: "",
-    trainTime: "",
-    trainFreq: ""
-});
 
 // On page load
 window.onload = function() {
+
+    
 
     $("#submitButton").on("click", function () {
         event.preventDefault();
@@ -38,22 +34,37 @@ window.onload = function() {
         console.log(trainFreq);
 
         database.ref().push({
-            trainName: trainName,
-            trainDest: trainDest,
-            trainTime: trainTime,
-            trainFreq: trainFreq
+            trainNameF: trainName,
+            trainDestF: trainDest,
+            trainTimeF: trainTime,
+            trainFreqF: trainFreq
         });
       
     });
 
     // Firebase watcher + initial loader HINT: .on("value")
-    database.ref().on("value", function(snapshot) {
+    database.ref().on("child_added", function(childSnapshot) {
 
         // Log everything that's coming out of snapshot
-        console.log(snapshot.val());
-  
+        console.log(childSnapshot.val());
+        var newSnap = childSnapshot.val();
+
         // Change the HTML to reflect
-        
+        var name = newSnap.trainNameF;
+        var dest = newSnap.trainDestF;
+        var time = newSnap.trainTimeF;
+        var freq = newSnap.trainFreqF;
+
+        var newRow = $("<tr>").append(
+            $("<td>").text(name),
+            $("<td>").text(dest),
+            $("<td>").text(freq),
+            $("<td>").text(time),
+            $("<td>").text("Ya mum kid"),
+        );
+
+        $("#newTable").append(newRow);
+
         // Handle the errors
       }, function(errorObject) {
         console.log("Errors handled: " + errorObject.code);
