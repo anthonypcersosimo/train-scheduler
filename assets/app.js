@@ -45,6 +45,11 @@ window.onload = function() {
     // Firebase watcher + initial loader HINT: .on("value")
     database.ref().on("child_added", function(childSnapshot) {
 
+        // Moment JS
+        var timeFormat = "h:mm a";
+        var convertedTime = moment().format(timeFormat);
+        console.log(convertedTime);
+
         // Log everything that's coming out of snapshot
         console.log(childSnapshot.val());
         var newSnap = childSnapshot.val();
@@ -52,14 +57,14 @@ window.onload = function() {
         // Change the HTML to reflect
         var name = newSnap.trainNameF;
         var dest = newSnap.trainDestF;
-        var time = newSnap.trainTimeF;
+        // var time = newSnap.trainTimeF;
         var freq = newSnap.trainFreqF;
 
         var newRow = $("<tr>").append(
             $("<td>").text(name),
             $("<td>").text(dest),
             $("<td>").text(freq),
-            $("<td>").text(time),
+            $("<td>").text("time"),
             $("<td>").text("Ya mum kid"),
         );
 
