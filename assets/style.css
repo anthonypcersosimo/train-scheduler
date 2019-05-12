@@ -22,7 +22,6 @@
     border-style: solid;
     border-color: rgb(223, 219, 219);
     margin-bottom: 10px;
-
 }
 
 tr, td {
@@ -30,6 +29,7 @@ tr, td {
     text-transform: uppercase;
     color: rgb(255, 208, 80);
     padding: 5px 0 5px 0;
+    letter-spacing: 1.15pt;
 }
 
 #black {

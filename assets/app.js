@@ -61,6 +61,14 @@ window.onload = function() {
         var nextArrival = moment().add(freq, 'minutes');
         var convertedArrival = nextArrival.format(timeFormat);
 
+        // This is the part I tried but could not get to work, brain is fried
+        // determine total # of mins between first train and current time
+        // figure out if it is evenly divisible or not
+        // If not display the next time that is after current time
+        // subtract next time from current time and that is your minutes away
+        // In practice this was not only cumbersome but it straight up did NOT work, my methods were most likely flawed
+        // This minutes away would go into the .text() on line 76
+        
         var newRow = $("<tr>").append(
             $("<td>").text(name),
             $("<td>").text(dest),
